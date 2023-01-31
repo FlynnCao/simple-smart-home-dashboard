@@ -1,3 +1,7 @@
+Date: 最后更新
+Dust: 灰尘
+Gas: 气体
+Temperature: 温度
 author: WOC7020 第 4 组的智能家居
 button:
   about: 关于
@@ -13,3 +17,6 @@ intro:
   hi: 你好，{name}
   whats-your-name: 输入你的名字
 not-found: 未找到页面
+rain: 雨
+Humid: 湿度
+

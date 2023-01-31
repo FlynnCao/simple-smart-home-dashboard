@@ -27,7 +27,7 @@ const getDataFromJSON = () => {
     lastUpdateTime.value = new Date()
     processData(res.data)
   }).catch((error) => {
-    alert('READ JSON FILE DATA ERROR')
+    // alert('READ JSON FILE DATA ERROR')
     console.error(error)
   })
 }
@@ -60,12 +60,12 @@ onUnmounted(() => {
 
 <template>
   <div class="index-panel border-1 h-[calc(100vh-100px)]">
-    <p>Last Update: {{ lastUpdateTime }}</p>
+    <p>{{ t('Date') }}: {{ lastUpdateTime }}</p>
     <div class="index-panel-core m-x-auto flex  sm:w-100px md:w-700px lg:w-700px xl:w-700px 2xl:w-700px m-y-200px text-center color-auto  items-center justify-center bg-transparent">
       <!-- Humidity -->
       <div class="w-100px h-100px inline-block bg-yellow-100  dark-bg-yellow m-10px rounded flex flex-col justify-center">
         <h2>
-          Humidity
+          {{ t('Humid') }}
         </h2>
         <div class="flex items-center  justify-items-center translate-x-5px">
           <div class="i-mdi-water-percent text-2xl inline-block" /><span>{{ `${status.humidity}%` }}</span>
@@ -74,7 +74,7 @@ onUnmounted(() => {
       <!-- Temperature -->
       <div class="inline-block w-100px h-100px bg-blue-100 dark-bg-paleblue m-10px rounded flex flex-col justify-center">
         <h2>
-          Temperature
+          {{ t('Temperature') }}
         </h2>
         <div class="inline-block flex items-center justify-items-center translate-x-5px">
           <div class="i-mdi-thermometer text-2xl inline-block" /><span>{{ status.temperature }}℃</span>
@@ -83,7 +83,7 @@ onUnmounted(() => {
       <!-- Rain -->
       <div class="inline-block w-100px h-100px bg-purple-100 dark-bg-purple-500  m-10px rounded flex flex-col justify-center" :class="{ '!bg-red-500': status.rain, 'dark-bg-red-500': status.rain }">
         <h2>
-          Rain
+          {{ t('rain') }}
         </h2>
         <div class="flex items-center justify-items-center translate-x-5px">
           <div class="i-mdi-weather-pouring text-2xl inline-block" /><span>{{ status.rain ? 'ALERT' : 'NORMAL' }}</span>
@@ -92,7 +92,7 @@ onUnmounted(() => {
       <!-- Smoke 2 -->
       <div class="inline-block w-100px h-100px bg-gray-100 dark-bg-gray-500  m-10px rounded flex flex-col justify-center" :class="{ '!bg-red-500': status.smoke2, 'dark-bg-red-500': status.smoke2 }">
         <h2>
-          Gas #2
+          {{ t('Gas') }} #2
         </h2>
         <div class="flex items-center justify-items-center translate-x-5px">
           <div class="i-mdi-smoke text-2xl inline-block" /><span>{{ status.smoke2 ? 'ALERT' : 'NORMAL' }}</span>
@@ -101,7 +101,7 @@ onUnmounted(() => {
       <!-- Smoke 7 -->
       <div class="inline-block w-100px h-100px bg-gray-100 dark-bg-gray-500  m-10px rounded flex flex-col justify-center" :class="{ '!bg-red-500': status.smoke7, 'dark-bg-red-500': status.smoke7 }">
         <h2>
-          Gas #7
+          {{ t('Gas') }} #7
         </h2>
         <div class="flex items-center justify-items-center translate-x-5px">
           <div class="i-mdi-smoke text-2xl inline-block" /><span>{{ status.smoke7 ? 'ALERT' : 'NORMAL' }}</span>
@@ -113,7 +113,7 @@ onUnmounted(() => {
         :class="{ '!bg-red-500': status.dust, 'dark-bg-red-500': status.dust }"
       >
         <h2>
-          Dust
+          {{ t('Dust') }}
         </h2>
         <div class="flex items-center justify-items-center translate-x-5px">
           <div class="i-mdi-weather-dust text-2xl inline-block" /><span>OFFLINE</span>
